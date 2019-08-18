@@ -8,7 +8,10 @@ Required R packages:
 - mapview
 - dplyr
 - ggplot2
+
+NEW
 - raster
+- lwgeom
 
 [Workshop notes](rgeo_workshop.html)
 
