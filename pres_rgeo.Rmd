@@ -7,7 +7,7 @@ output: slidy_presentation
 
 ## Link to workshop content
 
-http://pmarchand1.github.io/rgeo-csee2019
+http://pmarchand1.github.io/rgeo-csee2019/
 
 ## Geospatial data
 
