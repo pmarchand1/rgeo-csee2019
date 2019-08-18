@@ -40,6 +40,11 @@ A few advantages of scripted analyses:
 * Create more complex static maps (with ***ggplot2***) and interactive maps (with ***mapview***).
 
 
+## You are here
+
+![images/here_map.png](images/here_map.png)
+
+
 ## Explore a vector dataset
 
 * Read vector datasets into R. 
@@ -49,7 +54,7 @@ A few advantages of scripted analyses:
 * Manipulate spatial data frames with ***dplyr***.
 
 
-## Explorer un jeu de données vectoriel
+## Explore a vector dataset
 
 * Spatial vector data associate data fields to localized geometric features such as points, lines and polygons. The ***sf*** package can be used to work with those datasets in R.
 

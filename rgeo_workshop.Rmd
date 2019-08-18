@@ -144,7 +144,7 @@ plots <- read.csv("data/plots.csv", stringsAsFactors = FALSE)
 head(plots)
 ```
 
-We can convert this data to an `sf` object with `st_as_sf`. The `coords` argument specify which columns hold the X and Y coordinates, while the `crs` argument defines the coordinate reference system (here, it is set to the same CRS as the MRC dataset).
+We can convert this data to an `sf` object with `st_as_sf`. The `coords` argument specifies which columns hold the X and Y coordinates, while the `crs` argument defines the coordinate reference system (here, it is set to the same CRS as the MRC dataset).
 
 ```{r df_to_sf}
 plots <- st_as_sf(plots, coords = c("long", "lat"), crs = st_crs(mrc))
@@ -278,7 +278,7 @@ Create a map of the MRCs with different fill colors for each region.
 ### Review
 
 * A ***ggplot2*** graph starts with a call to the `ggplot()` function, followed by specific `geom` defining each graph layer, followed by optional customization functions. 
-* The `data` argument specifies the dataset to plot and the `aes` function associates variables in that dataset to graphical elements. These can be defined in the `ggplot` function (if they apply to all layers) on in specific `geom` layers. 
+* The `data` argument specifies the dataset to plot and the `aes` function associates variables in that dataset to graphical elements. These can be defined in the `ggplot` function (if they apply to all layers) or in specific `geom` layers. 
 * The `geom_sf` layer plots an `sf` object on a map. 
 * The `geom_sf_text` or `geom_sf_label` layers can be used to add textual data to each spatial feature on a map. 
 * The `coord_sf` function defines axis limits and the CRS to use, transforming all spatial features to that CRS. By default, the CRS of the first plotted spatial dataset is used.
@@ -397,7 +397,7 @@ ggplot(buffer_union) +
     geom_sf()
 ```
 
-We can use `st_intersection` to extract portions of the `mrc_01_11` polygons within 10 km of a forest inventory plot, i.e. within the merged buffer created above, and use `st_difference` to extract areas of the MRC polygons outside that buffer.
+We can use `st_intersection` to extract portions of the `mrc_01_11` polygons within 5 km of a forest inventory plot, i.e. within the merged buffer created above, and use `st_difference` to extract areas of the MRC polygons outside that buffer.
 
 ```{r st_inters_diff}
 mrc_01_11_proj <- st_transform(mrc_01_11, crs = 6622)
@@ -445,7 +445,7 @@ cdem <- read_stars("data/cdem_022BC_3s.tif")
 cdem
 ```
 
-The CDEM data has one *attribute* (variable), the elevation, which ranges from 2 to 1179 m for this particular section. The *dimensions* table includes a row for each array dimension, here *x* and *y*. The *from* and *to* columns indicate the range of indices in each dimension (4801 cells in *x* by 1201 cells in *y*), the *offset* column contains the coordinates of the top-left corner of the raster (70 degrees West, 49 degrees North), the *delta* column indicates the size of each raster cell (1/1200 \approx 0.000833 degree), and the *refsys* column describes the coordinate reference system. 
+The CDEM data has one *attribute* (variable), the elevation, which ranges from 2 to 1179 m for this particular section. The *dimensions* table includes a row for each array dimension, here *x* and *y*. The *from* and *to* columns indicate the range of indices in each dimension (4801 cells in *x* by 1201 cells in *y*), the *offset* column contains the coordinates of the top-left corner of the raster (70 degrees West, 49 degrees North), the *delta* column indicates the size of each raster cell (1/1200 $\approx$ 0.000833 degree), and the *refsys* column describes the coordinate reference system. 
 
 *Notes*
 
@@ -587,7 +587,7 @@ mapview(cdem_r) +
 
 ## Data sources {#data}
 
-All data in this workshop was made publicly available by Québec and Canada government agencies. The script `data_prep.R` shows the detailed steps to produce the workshop data files from the original sources.
+This workshop uses public data made available by Québec and Canada government agencies. The script `data_prep.R` shows the detailed steps to produce the workshop data files from the original sources.
 
 * County regional municipality (CRM) [boundaries](https://mern.gouv.qc.ca/territoire/portrait/portrait-donnees-mille.jsp) were downloaded from the Québec Department of Energy and Natural Resources (MERN) and merged with [population data](https://www.stat.gouv.qc.ca/statistiques/population-demographie/structure/mrc-total.xlsx) from the Institut de la statistique du Québec. Column names were translated to English and diacritic marks (accents) were removed from all place names.
 

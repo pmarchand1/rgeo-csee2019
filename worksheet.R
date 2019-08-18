@@ -105,9 +105,10 @@ areas <- ...
 # Change units
 units(areas) <- ...
 
+# Which plots and MRCs intersect?
 inters <- ...
 
-
+# Spatial join
 plots_mrc <- ...
 
 mrc_01_11 <- mrc[...]
@@ -192,6 +193,7 @@ ggplot() +
     scale_fill_viridis_c() +
     coord_sf(xlim = c(-70, -66), ylim = c(48, 49)) +
     theme_bw()
+
 
 # Raster operations
 
