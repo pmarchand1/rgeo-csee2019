@@ -1,8 +1,17 @@
 
-[Aller au contenu de l'atelier](atelier_rgeo.md)
+Setup instructions: Download the [workshop content](https://github.com/pmarchand1/rgeo-csee2019/archive/master.zip), unzip the files in a folder of your choice, and open `rgeo-csee2019.Rproj` with RStudio.
 
-[*Go to workshop content*](rgeo_workshop.md)
+Required R packages:
 
-[Diapositives](pres_rgeo.html)
+- sf
+- stars
+- mapview
+- dplyr
+- ggplot2
+- raster
 
-[Lien vers les données](https://drive.google.com/open?id=1wL7m89l_9pxatKynztEcrGLm0NB0xR57)
+[Workshop notes](rgeo_workshop.html)
+
+[*Notes en français*](atelier_rgeo.html)
+
+[Slides](pres_rgeo.html)
